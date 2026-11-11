@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vó Bertila | Pizzaria e Massas em Foz do Iguaçu</title>
+<meta name="description" content="Vó Bertila: restaurante italiano à moda antiga em Foz do Iguaçu, com massas, pizzas, sobremesas, cerveja e vinho. Rua Bartolomeu de Gusmão, 1116, Centro.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500&family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+/* FOTOS: coloque na MESMA pasta do index.html (em .png, .jpg, .jpeg ou .webp):
+   foto-topo (fundo do topo), foto-casa (arco da seção "A casa"), foto-1 até foto-20 (destaques, na ordem combinada).
+   O site usa sozinho as que existirem. */
+/* WHATSAPP: se o restaurante tiver WhatsApp, coloque o número aqui, só com números, ex.: '5545999999999'. Vazio = botões ligam para o telefone. */
+:root{--tomate:#b3261e;--tomate2:#cf3a2f;--verde:#1f4a36;--creme:#f8f0e0;--papel:#efe3cc;--madeira:#2a1a14;--mostarda:#e0a93b;--tinta:#2b1d17}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Nunito Sans',system-ui,sans-serif;background:var(--creme);color:var(--tinta);line-height:1.65;font-size:17px}
+h1,h2,h3,h4{font-family:'Fraunces',Georgia,serif;line-height:1.12}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+:focus-visible{outline:3px solid var(--mostarda);outline-offset:3px}
+.xadrez{height:18px;background:conic-gradient(var(--tomate) 25%,#fff 0 50%,var(--tomate) 0 75%,#fff 0) 0 0/36px 36px}
+header{position:fixed;inset:0 0 auto 0;z-index:50;background:rgba(42,26,20,.95);backdrop-filter:blur(8px);border-bottom:3px solid var(--tomate)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font-family:'Fraunces',serif;font-style:italic;font-size:29px;color:var(--creme);text-decoration:none;font-weight:700}
+.logo span{color:var(--mostarda)}
+nav ul{display:flex;gap:26px;list-style:none}
+nav a{color:#efe3cc;text-decoration:none;font-size:15px;font-weight:600}
+nav a:hover{color:var(--mostarda)}
+.menu-btn{display:none;background:none;border:1px solid var(--mostarda);color:var(--creme);padding:8px 14px;border-radius:6px;font:inherit;cursor:pointer}
+.hero{position:relative;min-height:100svh;display:flex;align-items:center;color:var(--creme);overflow:hidden;background:
+ radial-gradient(800px 500px at 88% 12%,rgba(224,169,59,.32),transparent 60%),
+ radial-gradient(700px 500px at 0% 100%,rgba(31,74,54,.85),transparent 65%),
+ linear-gradient(160deg,#1b100c 0%,#3a2218 70%,#4a2a1c 120%)}
+.hero::before{content:"";position:absolute;inset:0;background:var(--hero-img,none) center/cover no-repeat;opacity:.6}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(25,14,10,.9) 0%,rgba(25,14,10,.42) 70%,rgba(25,14,10,.2) 100%)}
+.hero .wrap{position:relative;z-index:2;padding-top:110px;padding-bottom:100px}
+.hero .xadrez{position:absolute;left:0;right:0;bottom:0;z-index:3}
+.selo{display:inline-flex;gap:12px;align-items:center;border:1px solid rgba(224,169,59,.7);padding:10px 18px;border-radius:999px;font-size:15px;margin-bottom:26px;background:rgba(25,14,10,.5)}
+.stars{color:var(--mostarda);letter-spacing:2px}
+.hero h1{font-size:clamp(58px,11vw,140px);font-style:italic;font-weight:700;letter-spacing:-.01em}
+.hero h1 em{display:block;font-size:.3em;font-style:normal;font-weight:500;color:var(--mostarda);margin-top:10px;letter-spacing:.02em}
+.hero p.lead{max-width:48ch;margin:22px 0 32px;font-size:19px;font-weight:300;color:#f1e6d2}
+.btns{display:flex;flex-wrap:wrap;gap:14px}
+.btn{display:inline-block;text-decoration:none;padding:15px 30px;border-radius:999px;font-weight:700;font-size:16px;border:2px solid transparent;transition:transform .2s,background .2s;cursor:pointer}
+.btn:hover{transform:translateY(-2px)}
+.btn-main{background:var(--tomate);color:#fff}.btn-main:hover{background:var(--tomate2)}
+.btn-line{border-color:var(--mostarda);color:var(--creme)}.btn-line:hover{background:rgba(224,169,59,.2)}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:34px}
+.chips span{font-size:14px;padding:6px 14px;border-radius:999px;background:rgba(248,240,224,.1);border:1px solid rgba(248,240,224,.3)}
+section{padding:105px 0}
+.titulo{font-size:clamp(38px,5.4vw,62px);color:var(--tomate);margin-bottom:20px}
+.sobre{display:grid;grid-template-columns:1.1fr 1fr;gap:70px;align-items:center}
+.sobre p{margin-bottom:18px;max-width:52ch}
+.valor{display:inline-block;margin-top:6px;padding:12px 22px;border:2px dashed var(--tomate);border-radius:10px;background:var(--papel)}
+.valor b{font-family:'Fraunces',serif;font-size:27px;color:var(--tomate)}
+.valor small{display:block;font-size:13.5px;color:#6b5a50}
+.moldura{aspect-ratio:4/5;border-radius:220px 220px 14px 14px;background:linear-gradient(180deg,#2f5a45,var(--verde));display:grid;place-items:center;color:var(--mostarda);position:relative;overflow:hidden;border:6px solid var(--papel);box-shadow:0 0 0 2px var(--tomate)}
+.moldura svg{width:50%}
+.moldura .sel{position:absolute;bottom:26px;font-family:'Fraunces',serif;font-style:italic;font-size:25px;color:var(--creme);text-align:center;padding:0 20px}
+.moldura.tem-foto{background-size:cover;background-position:center}
+.moldura.tem-foto svg,.moldura.tem-foto .sel{display:none}
+.destaques{background:var(--papel)}
+.destaques .intro{max-width:58ch;margin-bottom:38px}
+.grade{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.slot{background:#fff;border-radius:12px;overflow:hidden;border:1px solid rgba(179,38,30,.25);box-shadow:0 6px 18px rgba(42,26,20,.08)}
+.slot .img{position:relative;aspect-ratio:4/3;display:grid;place-items:center;color:rgba(179,38,30,.45);background:center/cover no-repeat,conic-gradient(rgba(179,38,30,.08) 25%,#fff 0 50%,rgba(179,38,30,.08) 0 75%,#fff 0) 0 0/28px 28px}
+.slot .img svg{width:46px}
+.slot.on .img svg{display:none}
+.slot .tag{position:absolute;top:10px;left:10px;background:var(--tomate);color:#fff;font-size:12px;font-weight:700;padding:3px 10px;border-radius:999px;letter-spacing:.03em}
+.slot figcaption{padding:12px 16px;font-family:'Fraunces',serif;font-size:19px;color:var(--madeira);text-align:center}
+.cardapio{background:var(--madeira);color:var(--creme)}
+.cardapio .titulo{color:var(--mostarda);text-align:center}
+.cardapio .intro{text-align:center;max-width:60ch;margin:0 auto 34px;font-weight:300;color:#e8dac2}
+.abas{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:40px}
+.abas button{font:inherit;font-weight:700;font-size:15.5px;padding:10px 22px;border-radius:999px;border:1.5px solid var(--mostarda);background:none;color:var(--creme);cursor:pointer}
+.abas button[aria-selected="true"]{background:var(--mostarda);color:var(--madeira)}
+.painel{display:none}.painel.on{display:block}
+.grupo{margin-bottom:46px}
+.grupo h3{font-size:clamp(28px,4vw,40px);color:var(--mostarda);font-style:italic;margin-bottom:4px}
+.grupo .leg{font-size:14.5px;color:#d9c9ad;margin-bottom:18px}
+.itens{display:grid;grid-template-columns:1fr 1fr;gap:6px 56px}
+.it{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px dotted rgba(224,169,59,.4)}
+.it h4{font-size:18px;letter-spacing:.02em;text-transform:uppercase;font-family:'Nunito Sans',sans-serif;font-weight:700;color:var(--creme)}
+.it p{font-size:15px;font-weight:300;color:#d9c9ad;line-height:1.5;margin-top:2px}
+.it .pr{white-space:nowrap;font-family:'Fraunces',serif;font-size:21px;color:var(--mostarda);font-weight:700}
+.rodape-menu{text-align:center;margin-top:10px;font-size:14px;color:#cdbb9d}
+.nota{display:grid;grid-template-columns:auto 1fr;gap:60px;align-items:center;max-width:860px;margin:0 auto}
+.nota .num{font-family:'Fraunces',serif;font-size:clamp(90px,14vw,170px);color:var(--tomate);line-height:.9;font-weight:700}
+.nota .stars{font-size:26px}
+.nota p{color:#54443b}
+.contato{background:var(--verde);color:#fff}
+.contato .titulo{color:#fff;text-align:center;margin-bottom:48px}
+.grid-contato{display:grid;grid-template-columns:1.15fr 1fr;gap:56px;align-items:start}
+.mapa{width:100%;height:430px;border:0;border-radius:12px;background:#d8cdb8;display:block}
+.info div{margin-bottom:28px}
+.info h3{font-size:28px;margin-bottom:4px;color:var(--mostarda)}
+.info p,.info a{font-size:18px;font-weight:300;text-decoration:none}
+.info a.tel{border-bottom:1px solid rgba(255,255,255,.5)}
+.horarios{width:100%;border-collapse:collapse;font-size:17px;font-weight:300}
+.horarios td{padding:5px 0}.horarios td:last-child{text-align:right;font-weight:600}
+.info small{display:block;margin-top:8px;font-size:14.5px;opacity:.85}
+.contato .btn-line{border-color:#fff;color:#fff}
+footer{background:#170d09;color:#c4b49b;text-align:center;padding:34px 24px 110px;font-size:14.5px}
+footer b{color:var(--creme);font-family:'Fraunces',serif;font-style:italic;font-size:24px}
+.flutuantes{position:fixed;right:0;bottom:90px;z-index:60;display:flex;flex-direction:column;gap:12px}
+.flutuantes a{padding:13px 22px 13px 20px;border-radius:999px 0 0 999px;color:#fff;font-weight:700;font-size:15px;text-decoration:none;box-shadow:0 8px 22px rgba(0,0,0,.3)}
+.f1{background:var(--tomate)}.f2{background:var(--verde)}
+.barra-mobile{display:none}
+@media (prefers-reduced-motion:no-preference){
+ .hero .wrap>*{animation:sobe .9s cubic-bezier(.2,.7,.2,1) both}
+ .hero .wrap>*:nth-child(2){animation-delay:.12s}.hero .wrap>*:nth-child(3){animation-delay:.24s}
+ .hero .wrap>*:nth-child(4){animation-delay:.36s}.hero .wrap>*:nth-child(5){animation-delay:.48s}
+ @keyframes sobe{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}}
+@media (max-width:860px){
+ body{font-size:16.5px}section{padding:74px 0}
+ .menu-btn{display:block}
+ nav ul{display:none;position:absolute;top:68px;left:0;right:0;flex-direction:column;gap:0;background:var(--madeira);padding:8px 24px 18px;border-bottom:3px solid var(--tomate)}
+ nav ul.aberto{display:flex}
+ nav li a{display:block;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+ .sobre,.grid-contato{grid-template-columns:1fr;gap:40px}
+ .moldura{max-width:380px;margin:0 auto;width:100%}
+ .grade{grid-template-columns:repeat(2,1fr);gap:14px}
+ .slot figcaption{font-size:16px;padding:10px}
+ .itens{grid-template-columns:1fr}
+ .nota{grid-template-columns:1fr;gap:12px;text-align:center}
+ .mapa{height:320px}
+ .flutuantes{display:none}
+ .barra-mobile{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:60;gap:10px;padding:10px;background:var(--madeira);border-top:3px solid var(--tomate)}
+ .barra-mobile a{flex:1;text-align:center;padding:13px 6px;border-radius:10px;font-weight:700;font-size:15px;text-decoration:none;color:#fff}
+ .barra-mobile .a1{background:var(--tomate)}.barra-mobile .a2{background:var(--verde)}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+  <a class="logo" href="#inicio" aria-label="Vó Bertila – início">Vó <span>Bertila</span></a>
+  <button class="menu-btn" id="mb" aria-expanded="false" aria-controls="menu">Menu</button>
+  <nav aria-label="Principal"><ul id="menu">
+    <li><a href="#sobre">A casa</a></li><li><a href="#destaques">Destaques</a></li><li><a href="#cardapio">Cardápio</a></li>
+    <li><a href="#avaliacoes">Avaliações</a></li><li><a href="#contato">Contato</a></li>
+  </ul></nav>
+</div></header>
+
+<main>
+<section class="hero" id="inicio"><div class="wrap">
+  <div class="selo"><span class="stars" aria-hidden="true">★★★★★</span><span>4,7 · 4.116 avaliações no Google</span></div>
+  <h1>Vó Bertila<em>Pizzaria italiana à moda antiga · Foz do Iguaçu</em></h1>
+  <p class="lead">Massas, pizzas e sobremesas, cerveja e vinho, num restaurante italiano com jeito de casa de família no Centro de Foz do Iguaçu.</p>
+  <div class="btns">
+    <a class="btn btn-main" data-acao href="tel:+554530280170">Ligar e reservar</a>
+    <a class="btn btn-line" href="#cardapio">Ver cardápio</a>
+  </div>
+  <div class="chips"><span>Refeição no local</span><span>Para viagem</span><span>Entrega</span></div>
+  <div class="xadrez" aria-hidden="true"></div>
+</div></section>
+
+<section id="sobre"><div class="wrap sobre">
+  <div>
+    <h2 class="titulo">A casa</h2>
+    <p>A Vó Bertila é um restaurante italiano à moda antiga, com massas, pizzas e sobremesas, cerveja e vinho, no Centro de Foz do Iguaçu.</p>
+    <p>Abre à noite, de segunda a sábado. Você pode comer no local, levar para viagem ou pedir com entrega.</p>
+    <div class="valor"><b>R$ 60–140</b><small>por pessoa, valor informado por clientes no Google</small></div>
+  </div>
+  <div class="moldura" id="moldura" role="img" aria-label="Ilustração de pizza">
+    <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M50 88 14 28c10-8 22-12 36-12s26 4 36 12z"/><circle cx="40" cy="38" r="4"/><circle cx="58" cy="34" r="3.5"/><circle cx="50" cy="54" r="4"/><circle cx="46" cy="70" r="3"/></svg>
+    <div class="sel">Buon appetito!</div>
+  </div>
+</div></section>
+
+<section class="destaques" id="destaques"><div class="wrap">
+  <h2 class="titulo">Destaques da casa</h2>
+  <p class="intro">Alguns dos pratos e momentos mais lembrados pelos clientes.</p>
+  <div class="grade" id="grade"></div>
+</div></section>
+
+<section class="cardapio" id="cardapio"><div class="wrap">
+  <h2 class="titulo">Cardápio</h2>
+  <p class="intro">Pizzas, massas, carnes, porções, bebidas e sobremesas. Valores em reais.</p>
+  <div class="abas" id="abas" role="tablist"></div>
+  <div id="paineis"></div>
+  <p class="rodape-menu">Os valores podem mudar. Confirme com o restaurante na hora de pedir.</p>
+</div></section>
+
+<section id="avaliacoes"><div class="wrap nota">
+  <div class="num">4,7</div>
+  <div>
+    <div class="stars" aria-hidden="true">★★★★★</div>
+    <h2 class="titulo" style="font-size:clamp(30px,4vw,46px);margin:8px 0 10px">Nota dos clientes no Google</h2>
+    <p>Mais de 4 mil pessoas avaliaram a Vó Bertila no Google Maps, com nota média de 4,7 em 5.</p>
+    <p style="margin-top:18px"><a class="btn btn-main" href="https://www.google.com/maps/search/?api=1&query=V%C3%B3+Bertila+Foz+do+Igua%C3%A7u" target="_blank" rel="noopener">Ver avaliações no Google</a></p>
+  </div>
+</div></section>
+
+<section class="contato" id="contato"><div class="wrap">
+  <h2 class="titulo">Contato</h2>
+  <div class="grid-contato">
+    <iframe class="mapa" title="Mapa da Vó Bertila" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Rua+Bartolomeu+de+Gusm%C3%A3o,+1116,+Centro,+Foz+do+Igua%C3%A7u+-+PR&output=embed"></iframe>
+    <div class="info">
+      <div><h3>Endereço</h3>
+        <p>Rua Bartolomeu de Gusmão, 1116<br>Centro, Foz do Iguaçu – PR, 85851-160</p>
+        <p style="margin-top:8px"><a href="https://www.google.com/maps/search/?api=1&query=Rua+Bartolomeu+de+Gusm%C3%A3o,+1116,+Foz+do+Igua%C3%A7u+-+PR" target="_blank" rel="noopener" style="border-bottom:1px solid rgba(255,255,255,.5)">Abrir no Google Maps</a></p></div>
+      <div><h3>Telefone</h3><p><a class="tel" href="tel:+554530280170">(45) 3028-0170</a></p></div>
+      <div><h3>Horário</h3>
+        <table class="horarios">
+          <tr><td>Segunda a sábado</td><td>18h30 às 23h45</td></tr>
+          <tr><td>Domingo</td><td>Fechado</td></tr>
+        </table>
+        <small>Em feriados os horários podem ser diferentes. Confirme por telefone.</small></div>
+      <div class="btns">
+        <a class="btn btn-main" style="background:var(--mostarda);color:var(--madeira)" data-acao href="tel:+554530280170">Ligar e reservar</a>
+      </div>
+    </div>
+  </div>
+</div></section>
+</main>
+
+<footer><b>Vó Bertila</b><br>Pizzaria e massas · Foz do Iguaçu – PR<br>© <span id="ano"></span> Vó Bertila</footer>
+
+<div class="flutuantes">
+  <a class="f1" data-acao href="tel:+554530280170">Ligar</a>
+  <a class="f2" href="#cardapio">Cardápio</a>
+</div>
+<div class="barra-mobile">
+  <a class="a1" data-acao href="tel:+554530280170">Ligar e reservar</a>
+  <a class="a2" href="#cardapio">Ver cardápio</a>
+</div>
+
+<script>
+var ZAP='';
+document.getElementById('ano').textContent=new Date().getFullYear();
+if(ZAP){document.querySelectorAll('[data-acao]').forEach(function(a){a.href='https://wa.me/'+ZAP+'?text='+encodeURIComponent('Olá! Gostaria de fazer uma reserva na Vó Bertila.');a.target='_blank';a.rel='noopener';if(a.textContent.indexOf('Ligar')===0)a.textContent=a.textContent.replace('Ligar','Chamar');})}
+var mb=document.getElementById('mb'),mn=document.getElementById('menu');
+mb.addEventListener('click',function(){var o=mn.classList.toggle('aberto');mb.setAttribute('aria-expanded',o)});
+mn.addEventListener('click',function(e){if(e.target.tagName==='A'){mn.classList.remove('aberto');mb.setAttribute('aria-expanded',false)}});
+
+/* ===== CARDÁPIO (só texto) ===== */
+var MENU=[
+{t:'Pizzas',g:[
+ {t:'Pizzas salgadas',l:'Valores em R$: pequena / grande. Todas levam molho de tomate e orégano.',i:[
+  ['Calabresa','mozzarella, calabresa e cebola','58 / 112'],
+  ['Calabresa paulista','calabresa e cebola','58 / 112'],
+  ['Mozzarella','mozzarella e azeitonas','58 / 112'],
+  ['Napoletana original','mozzarella de búfala, tomate pelati e parmesão','68 / 132'],
+  ['Napolitana Brasil','mozzarella, tomate e parmesão','58 / 112'],
+  ['Prosciutto crudo','mozzarella de búfala, presunto “Parma” e azeitona','72 / 143'],
+  ['Vó Bertila','queijo de colônia, salame de colônia, tomate e azeitonas','59 / 120'],
+  ['Portuguesa','mozzarella, ovo cozido, presunto cozido, pimentão, tomate, cebola e azeitona','59 / 120'],
+  ['Milho','mozzarella, milho, azeitona e queijo polengui','58 / 112'],
+  ['Frango com requeijão','mozzarella, frango desfiado, azeitonas e requeijão cremoso','63 / 126'],
+  ['Atum','mozzarella, atum e azeitonas','59 / 115'],
+  ['Atum da casa','mozzarella, atum, cebola, tomate cereja, alcaparra e azeitonas','64 / 128'],
+  ['Bacon','mozzarella, bacon em fatias, tomate e azeitonas','58 / 112'],
+  ['Peperoni','mozzarella, peperoni, cebola e azeitonas','59 / 119'],
+  ['Lombinho','mozzarella, lombo tipo canadense e requeijão cremoso','59 / 120'],
+  ['Lombo abacaxi','mozzarella, lombo tipo canadense e abacaxi em pedaços','59 / 120'],
+  ['Cinco queijos','mozzarella, provolone, parmesão, gorgonzola e requeijão cremoso','64 / 128'],
+  ['Abobrinha','mozzarella, abobrinha em fatias, presunto “Parma” e queijo polengui','64 / 128'],
+  ['Aliche','mozzarella, anchova, pimentão e azeitona','64 / 128'],
+  ['Escarola','mozzarella, escarola com bacon e provolone','58 / 112'],
+  ['Vegetariana I','queijo colônia, rúcula e tomate cereja','58 / 112'],
+  ['Vegetariana II','mozzarella, escarola, ricota, palmito e azeitonas','63 / 122'],
+  ['Jabá','mozzarella, carne seca desfiada, cebola, pimenta biquinho e azeitona','63 / 122'],
+  ['Marguerita','mozzarella de búfala, tomate pelati e manjericão fresco','68 / 132'],
+  ['Berinjela','mozzarella, berinjela refogada, pimentão e azeitonas','58 / 112'],
+  ['Palmito','mozzarella, palmito, champignon e azeitonas','69 / 125']]},
+ {t:'Pizzas doces',l:'Valores em R$: pequena / grande.',i:[
+  ['Banana flambada','mozzarella, banana, leite condensado, canela e rum','58 / 107'],
+  ['Chocolate','mozzarella, chocolate preto ou branco','63 / 117'],
+  ['Prestígio','mozzarella, chocolate, coco em flocos e leite condensado','64 / 122'],
+  ['Cinco frutas','mozzarella, figo, pêssego, ameixa, abacaxi e cereja','64 / 122'],
+  ['Da Nonna','mozzarella, requeijão cremoso e goiabada cascão','64 / 122']]},
+ {t:'Focaccias, calzones e extras',l:'Valores em R$.',i:[
+  ['Focaccia recheada','frango com requeijão cremoso ou cinco queijos. Média 103 / grande 138','103 / 138'],
+  ['Calzone Bambino','banana ou goiabada','40'],
+  ['Cobertura extra','apenas com os sabores do cardápio, cada pedaço','2,50'],
+  ['Bordas','queijo cremoso, queijo cremoso com bacon ou chocolate, para qualquer tamanho','23']]}]},
+{t:'Massas',g:[
+ {t:'Massas',l:'Valores em R$: prato para duas pessoas / prato individual.',i:[
+  ['Pene, spagueti, talharin ou fusilli','molhos: bolonhesa, atum, frango, alho, funghi, pesto e pomodoro','122 / 73'],
+  ['Pene, spagueti, talharin ou fusilli','molhos: putanesca e cinco queijos','141 / 85'],
+  ['Lasanha','molhos: bolonhesa, cinco queijos, frango, presunto cozido e pomodoro','145 / 87'],
+  ['Nhoque','molhos: bolonhesa, frango, pomodoro, funghi e cinco queijos flambado','138 / 83'],
+  ['Spagueti carbonara da Nonna','com ou sem creme','138 / 83'],
+  ['Polenta da Nonna','somente às terças-feiras: a deliciosa polenta com frango ao molho','108 / 65'],
+  ['Rondelli','ricota com berinjela e molho branco; presunto, queijo e molho bolonhesa; ou frango, ricota e tomate seco com molho pomodoro','135 / 81']]}]},
+{t:'Carnes, saladas e porções',g:[
+ {t:'Carnes',l:'Valores em R$: dois valores por prato, como no cardápio do restaurante.',i:[
+  ['Filé à cavalo','com arroz, batata frita e ovo à cavalo','175 / 103'],
+  ['Filé mignon à parmegiana','porção de arroz e batata palito','175 / 103']]},
+ {t:'Saladas',l:'Valores em R$: dois valores por prato. Base das saladas: alface, tomate, rúcula e croutons.',i:[
+  ['Radicci','','69 / 38'],['Palmito','','88 / 52'],['Atum','com ovo','101 / 61']]},
+ {t:'Porções',l:'Valores em R$.',i:[
+  ['Batata ou polenta','','38'],['Frango à passarinho','','38'],
+  ['Bolinho de bacalhau','porção 70 / meia porção 35','70 / 35'],
+  ['Calabresa acebolada','com farinha de mandioca torrada','51'],
+  ['Batata rústica','','44'],['Filé acebolado','tirinhas de filé e pão italiano','66']]}]},
+{t:'Bar e bebidas',g:[
+ {t:'Caipiras especiais da casa',l:'Valores em R$. Também podem ser feitas com vodka no lugar da cachaça: acrescente R$ 6 (vodka nacional) ou R$ 10 (vodka importada).',i:[
+  ['Nilso','uva Itália, manjericão, limoncello e cachaça','34'],
+  ['Cido','tangerina, pimenta dedo-de-moça, açúcar, cachaça e Marie Brizard Manga','34'],
+  ['Ana','abacaxi, limão, folhas frescas de hortelã e cachaça','34'],
+  ['Geralda','morango, limão, kiwi, maracujá, cachaça e grenadine','34']]},
+ {t:'Caipiras tradicionais',l:'Valores em R$. Limão ou frutas da época.',i:[
+  ['Com cachaça','','25'],['Com vodka nacional','','30'],['Com vodka importada','','34'],
+  ['Aperol Spritz','Aperol, espumante, água com gás e 1 rodela de laranja','30']]},
+ {t:'Bebidas',l:'Valores em R$.',i:[
+  ['Suco de laranja ou limonada','natural. Copo 13 / jarra 22','13 / 22'],
+  ['Limonada suíça','com leite condensado. Copo 20 / jarra 36','20 / 36'],
+  ['Suco de uva','garrafa 300 ml','15'],
+  ['Sucos de frutas com água','polpa: morango, abacaxi, caju, acerola, maracujá, acerola com laranja e abacaxi com menta. Copo 14 / jarra 22','14 / 22'],
+  ['Suco de frutas com leite','polpa. Copo 20 / jarra 33','20 / 33'],
+  ['Expresso tônica','','19'],['Soda italiana','','25'],
+  ['Refrigerantes','290 ml','8'],['Água com ou sem gás','','7'],['Água tônica','','8'],
+  ['Cervejas','600 ml','20'],['Cervejas long neck','','14'],
+  ['Chopp artesanal','300 ml 14 / 500 ml 20','14 / 20'],['Chopp vinho','garrafa 1 L','33']]}]},
+{t:'Sobremesas',g:[
+ {t:'Sobremesas',l:'Valores em R$.',i:[
+  ['Arroz doce da Mamma','','15'],['Sagu da Nonna','com vinho e creme','15'],['Pudim da Vó Luzia','','15'],
+  ['Manjar da Vó Bertila','com calda de vinho ou caramelo','15'],['Brigadeiro na caneca','','18'],
+  ['Queijo de colônia com melado','','15'],['Doce de abóbora em cubos','com calda','15'],
+  ['Queijo de colônia','com doce de leite, ambrosia, goiabada ou abóbora','15'],
+  ['Gato de Botas','banana flambada ao rum com queijo cremoso e goiabada','38'],
+  ['Banana flambada ao rum','com sorvete','28'],['Sorvete na taça','duas bolas','18'],
+  ['Banana com sorvete','','20'],['Sorvete com cobertura','','23'],
+  ['Vaca preta','sorvete de creme com Coca-Cola','20'],['Petit gâteau','sorvete e calda de chocolate','28'],
+  ['Pizza no prato com brigadeiro','não leva queijo','39'],['Pizza no prato com sorvete','não leva queijo','39']]}]}
+];
+var ab=document.getElementById('abas'),pn=document.getElementById('paineis');
+MENU.forEach(function(m,k){
+ var b=document.createElement('button');b.type='button';b.setAttribute('role','tab');b.textContent=m.t;b.setAttribute('aria-selected',k===0);ab.appendChild(b);
+ var p=document.createElement('div');p.className='painel'+(k===0?' on':'');p.setAttribute('role','tabpanel');
+ p.innerHTML=m.g.map(function(g){return '<div class="grupo"><h3>'+g.t+'</h3><p class="leg">'+g.l+'</p><div class="itens">'+g.i.map(function(x){return '<div class="it"><div><h4>'+x[0]+'</h4>'+(x[1]?'<p>'+x[1]+'</p>':'')+'</div><div class="pr">'+x[2]+'</div></div>'}).join('')+'</div></div>'}).join('');
+ pn.appendChild(p);
+ b.addEventListener('click',function(){ab.querySelectorAll('button').forEach(function(o,j){o.setAttribute('aria-selected',j===k);pn.children[j].classList.toggle('on',j===k)})});
+});
+
+/* ===== FOTOS ===== */
+var EXT=['.png','.jpg','.jpeg','.webp',''];
+function achar(bases,ok){var l=[];bases.forEach(function(b){EXT.forEach(function(e){l.push(b+e)})});var i=0;(function t(){if(i>=l.length)return;var im=new Image(),u=l[i++];im.onload=function(){ok(u)};im.onerror=t;im.src=u})()}
+achar(['foto-topo','fototopo'],function(u){document.getElementById('inicio').style.setProperty('--hero-img','url("'+u+'")')});
+achar(['foto-casa','fotocasa'],function(u){var m=document.getElementById('moldura');m.style.backgroundImage='url("'+u+'")';m.classList.add('tem-foto')});
+var FOTOS=['Pizzaria','Filé Mignon à Parmegiana','Pudim de Leite Condensado','Pizza Grande','Petit Gâteau','Brusqueta','Bruschettas','Pastas y Pizzas Deliciosas','Pizza da Vó Bertila','Filé à Parmegiana','Jarra de Vinho','Espaguete à Carbonara','Pizza Pequena','Lasanha Bolonhesa','Picada','Risoto de Funghi','Pastas à Porpetini','Chopp Pata Negra','Aperol Spritz','Pasta com Camarão'];
+var gr=document.getElementById('grade'),ico='<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="12" width="38" height="28" rx="4"/><circle cx="24" cy="26" r="8"/><path d="M17 12l2-4h10l2 4"/></svg>';
+FOTOS.forEach(function(nome,k){
+ var f=document.createElement('figure');f.className='slot';
+ f.innerHTML='<div class="img">'+ico+(k<8?'<span class="tag">Mais pedido</span>':'')+'</div><figcaption>'+nome+'</figcaption>';
+ gr.appendChild(f);
+ achar(['foto-'+(k+1),'foto'+(k+1)],function(u){var d=f.querySelector('.img');d.style.backgroundImage='url("'+u+'")';f.classList.add('on')});
+});
+</script>
+</body>
+</html>
