@@ -341,7 +341,7 @@ var EXT=['.png','.jpg','.jpeg','.webp',''];
 function achar(bases,ok){var l=[];bases.forEach(function(b){EXT.forEach(function(e){l.push(b+e)})});var i=0;(function t(){if(i>=l.length)return;var im=new Image(),u=l[i++];im.onload=function(){ok(u)};im.onerror=t;im.src=u})()}
 achar(['foto-topo','fototopo'],function(u){document.getElementById('inicio').style.setProperty('--hero-img','url("'+u+'")')});
 achar(['foto-casa','fotocasa'],function(u){var m=document.getElementById('moldura');m.style.backgroundImage='url("'+u+'")';m.classList.add('tem-foto')});
-var FOTOS=['Pizzaria','Filé Mignon à Parmegiana','Pudim de Leite Condensado','Pizza Grande','Petit Gâteau','Brusqueta','Bruschettas','Pastas y Pizzas Deliciosas','Pizza da Vó Bertila','Filé à Parmegiana','Jarra de Vinho','Espaguete à Carbonara','Pizza Pequena','Lasanha Bolonhesa','Picada','Risoto de Funghi','Pastas à Porpetini','Chopp Pata Negra','Aperol Spritz','Pasta com Camarão'];
+var FOTOS=['Pizzaria','Filé Mignon A Parmegiana','Pudim de Leite Condensado','Pizza Grande','Petit Gateau','Brusqueta','Bruschettas','Pastas Y Pizzas Deliciosas','Pizza da Vó Bertila','Filé A Parmegiana','Jarra de Vinho','Espaguete A Carbonara','Pizza Pequena','Lasanha Bolonhesa','Picada','Risoto de Funghi','Pastas A Porpetini','Pizza de Alho Poró','Chopp Pata Negra','Aperol Spritz'];
 var gr=document.getElementById('grade'),ico='<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="12" width="38" height="28" rx="4"/><circle cx="24" cy="26" r="8"/><path d="M17 12l2-4h10l2 4"/></svg>';
 FOTOS.forEach(function(nome,k){
  var f=document.createElement('figure');f.className='slot';
